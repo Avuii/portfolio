@@ -1,0 +1,283 @@
+/* === RESET & BASE === */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #e9f7f6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* === TOPBAR === */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00a8b5;
+    padding: 10px 20px;
+    color: white;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-left .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.topbar-left h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #f7b1b1;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .topbar {
+        flex-direction: column;
+    }
+
+    .topbar-left {
+        margin-bottom: 10px;
+    }
+}
+
+/* === HERO === */
+.hero {
+    background-color: #00a8b5;
+    color: white;
+    padding: 220px 20px 300px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.button {
+    background-color: #f1f1f1;
+    border: none;
+    color: black;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ddd;
+}
+
+/* === SECTIONS === */
+.section {
+    padding: 40px 20px;
+}
+
+.about,
+.interests {
+    background-color: #f8d6d1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about h2,
+.interests h2,
+.skills h3,
+.contact h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.about p,
+.interests p {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.skills {
+    padding: 40px 20px;
+}
+
+.skills p {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* === LANGUAGE LABELS === */
+.languages {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.languages p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* === CONTACT === */
+.contact {
+    padding: 40px 20px;
+}
+
+.input {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.padding-large {
+    padding: 12px 24px;
+}
+
+.text-grey {
+    color: #555;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.light-grey {
+    background-color: #f1f1f1;
+}
+
+.opacity {
+    opacity: 0.6;
+}
+
+.center {
+    text-align: center;
+}
+
+.xlarge {
+    font-size: 1.5rem;
+}
+
+.medium {
+    font-size: 1rem;
+}
+
+/* === FOOTER === */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: auto;
+}
+
+.footer i {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.footer i:hover {
+    opacity: 0.7;
+}
+
+.github-button {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.github-button i {
+  margin-right: 8px;
+}
+
+.github-button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.github-hover {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.github-hover:hover {
+  background-color: #333 !important;
+  transform: scale(1.05);
+}

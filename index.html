@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>KStanczyk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="script" href="/scripts/script.js">
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #ffff;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .padding-32 {
+            padding: 32px;
+        }
+
+        .text-grey {
+            color: #000000;
+        }
+
+        .opacity {
+            opacity: 0.6;
+        }
+    </style>
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        .bgimg {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('/images/background.png');
+            min-height: 100%;
+        }
+    </style>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: black;
+            position: relative;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .dropdown-content a {
+            color: grey;
+            display: block;
+            padding: 8px 0;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            color: white;
+        }
+
+        .dropdown-content {
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Sidebar with image -->
+    <!--  <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+        <div class="bgimg"></div>
+    </nav>
+-->
+
+    <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%; position: relative; overflow: hidden;">
+        <div class="animated-bg">
+            <div class="dust1"><img src="images/mask.png" /></div>
+            <div class="dust2"><img src="images/mask.png" /></div>
+           <div class="dust3"><img src="images/mask.png" /></div>
+            <div class="layer foreground1"><img src="images/background (4).png" /></div>
+            <div class="layer midground1"><img src="images/background (3)— kopia.png" /></div>
+            <div class="layer foreground2"><img src="images/background (7).png" /></div>
+            <div class="layer midground2"><img src="images/background (4) — kopia.png" /></div>
+            <div class="layer midground3"><img src="images/background (4) — kopia — kopia.png" /></div>
+            <div class="layer background"><img src="images/2.png" /></div>
+        </div>
+    </nav>
+
+    <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+    <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge"
+        style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+        <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright"
+            style="padding:0 12px;">
+            <i class="fa fa-remove close-icon" style="font-size: 30px;"></i>
+
+        </a>
+        <div class="w3-bar-block w3-center">
+            <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+            <div class="dropdown">
+                <button onclick="toggleDropdown()" class="w3-bar-item w3-button w3-text-grey w3-hover-black">
+                    Projects <i class="fa fa-caret-down" style="font-size: 20px;"></i>
+                </button>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="#project1" onclick="closeNav()"
+                        style="font-size: x-large; text-align: center;">Presentation Helper</a>
+                    <a href="#project2" onclick="closeNav()" style="font-size: x-large; text-align: center;">Coffe Crime
+                    </a>
+                    <a href="#project3" onclick="closeNav()" style="font-size: x-large; text-align: center; ">Grib
+                        parser </a>
+                    <a href="#project4" onclick="closeNav()"
+                        style="font-size: x-large; text-align: center;">PlanAndWindSimulator </a>
+                    <a href="#project5" onclick="closeNav()" style="font-size: x-large; text-align: center;">Huffman
+                        text compression </a>
+                    <a href="#project6" onclick="closeNav()" style="font-size: x-large; text-align: center; ">Huffman
+                        text compression </a>
+                </div>
+            </div>
+
+            <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About Me</a>
+            <a href="#skills" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Skills</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+                onclick="closeNav()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="w3-main w3-padding-large" style="margin-left:40%">
+
+        <!-- Menu icon to open sidebar -->
+        <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;"
+            onclick="openNav()"><i class="fa fa-bars" style="font-size: 30px;"></i></span>
+
+        <!-- Header -->
+        <header class="w3-container w3-center" style="padding: 220px 20px 300px 20px" id="home">
+            <div class="typewriter">
+                <h1 class="w3-jumbo"><b>Katarzyna Stańczyk</b></h1>
+                <p>Computer Science student | aspiring UI designer & developer</p>
+
+                <a href="https://www.dropbox.com/scl/fi/ub01qbrifvxawzsw3qfdg/CV_KStanczyk.pdf?rlkey=qippyd23n2y8qafa2detjzkav&st=e6lounog&dl=1"
+                    download>
+                    <button class="holographic-button">
+                        <i class="fa fa-download"></i> Download CV
+                    </button>
+
+                </a>
+
+        </header>
+        <!-- About Section -->
+        <div class="content w3-justify text-grey padding-32" id="about">
+            <h2><strong>About me</strong></h2>
+            <hr class="opacity">
+            <p>I'm a Computer Science student at the University of Łódź, where I specialize in<strong> programming and
+                    algorithms</strong> — but what sets me apart is how I blend that logic with creativity.</p>
+            <p>
+                I thrive at the intersection of technology and design. From clean UI layouts to meaningful code
+                architecture, I enjoy building experiences that are not only functional but visually engaging. I create
+                digital visuals, manage content across platforms, and develop efficient software that performs well —
+                and looks good doing it.
+            </p>
+            <p>
+                My work often reflects my curiosity. I’m constantly exploring new tools, frameworks, and design systems.
+                I approach each project with the mindset of a builder and the eye of a designer — asking not just
+                <em>"Does
+                    it work?"</em>, but also <em>"Does it feel right?"</em>
+            </p>
+            <p>
+                Outside of academics, I seek out opportunities to learn, grow, and collaborate on creative ideas.
+                Whether it’s designing, coding, performing music, or capturing visuals.
+
+                <br><br><em>Always curious. Always building.</em>
+            </p>
+        </div>
+        <!-- Interests -->
+        <div class="content w3-justify text-grey padding-32" id="about">
+            <h2><strong>Interests</strong></h2>
+            <hr class="opacity">
+            <p>I’m deeply passionate about visual expression, especially through digital graphics and visual design.
+                Whether I’m working on a UI layout or crafting custom illustrations, I find joy in the creative details
+                that make digital experiences feel intuitive and beautiful.
+            </p>
+            <p>
+                Beyond the screen, I explore the world through a camera lens — capturing moments, patterns, and light in
+                everyday scenes. Photography gives me a sense of stillness and observation that balances the structure
+                of coding.
+            </p>
+            <p>
+                Music is another major part of my life — I play the piano and clarinet, and I love singing, especially
+                in small vocal ensembles. Music trains my ear, sharpens my focus, and often inspires my visual work with
+                rhythm and harmony.
+            </p>
+            <p>
+                And finally… nothing gets done without coffee. Whether it's a quiet morning espresso or a shared
+                pour-over with friends, coffee is my fuel and my pause — both essential to the creative process.
+
+
+            </p>
+        </div>
+        <div class="content w3-justify text-grey padding-32" id="skills">
+            <h2><strong>My Skills</strong></h2>
+            <p>
+                <em>I’m always eager to learn and improve. Whether it’s mastering a new tool or exploring fresh ideas,
+                    I’m
+                    constantly working to grow and stay ahead of the curve. Here are the skills I use to turn ideas into
+                    reality.
+                </em>
+
+            </p>
+            <hr class="opacity">
+            <!-- Programming -->
+            <p class="w3-wide"><strong> Programming</strong></p>
+            <div class="badges">
+                <img src="https://img.shields.io/badge/-C++-00599C?style=flat&logo=c%2b%2b&logoColor=white" alt="C++">
+                <img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white"
+                    alt="Python">
+                <img src="https://img.shields.io/badge/-Pascal-003399?style=flat&logo=pascal&logoColor=white"
+                    alt="Pascal">
+            </div>
+
+            <!-- Web -->
+            <p class="w3-wide"><strong>Web</strong></p>
+            <div class="badges">
+                <img src="https://img.shields.io/badge/-HTML-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML">
+                <img src="https://img.shields.io/badge/-CSS-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS">
+                <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black"
+                    alt="JavaScript">
+                <img src="https://img.shields.io/badge/-Three.js-000000?style=flat&logo=three.js&logoColor=white"
+                    alt="Three.js">
+                <img src="https://img.shields.io/badge/-PHP-777BB4?style=flat&logo=php&logoColor=white" alt="PHP">
+            </div>
+
+            <!-- Databases -->
+            <p class="w3-wide"><strong>Databases</strong></p>
+            <div class="badges">
+                <img src="https://img.shields.io/badge/-Oracle_SQL-F80000?style=flat&logo=oracle&logoColor=white"
+                    alt="SQL Oracle">
+            </div>
+
+            <!-- OS & scripting -->
+            <p class="w3-wide"><strong>Operating systems & scripting</strong></p>
+            <div class="badges">
+                <img src="https://img.shields.io/badge/-Linux-000000?style=flat&logo=linux&logoColor=white"
+                    alt="Linux bash">
+                <img src="https://img.shields.io/badge/-Windows_Batch-0078D6?style=flat&logo=windows&logoColor=white"
+                    alt="Windows batch">
+            </div>
+
+            <!-- Design Tools -->
+            <p class="w3-wide"><strong>Graphic & Design Tools</strong></p>
+            <div class="badges">
+                <img src="https://img.shields.io/badge/-AutoCAD-E50000?style=flat&logo=autodesk&logoColor=white"
+                    alt="AutoCAD">
+                <img src="https://img.shields.io/badge/-Aseprite-7D929E?style=flat&logo=aseprite&logoColor=white"
+                    alt="Aseprite">
+                <img src="https://img.shields.io/badge/-Photoshop-31A8FF?style=flat&logo=adobephotoshop&logoColor=white"
+                    alt="Photoshop">
+                <img src="https://img.shields.io/badge/-GIMP-5C5543?style=flat&logo=gimp&logoColor=white" alt="GIMP">
+            </div>
+
+            <!-- Languages -->
+            <hr class="opacity">
+            <p class="w3-wide"><strong>Languages</strong></p>
+            <div class="languages">
+                <p>Polish <img
+                        src="https://img.shields.io/badge/-Native-000000?style=flat&labelColor=000000&logoColor=white"
+                        alt="Polish Native" style="margin-left: 40px;"></p>
+                <p>English <img
+                        src="https://img.shields.io/badge/-C1-000000?style=flat&labelColor=000000&logoColor=white"
+                        alt="English C1" style="margin-left: 30px;"></p>
+                <p>German <img
+                        src="https://img.shields.io/badge/-B1-000000?style=flat&labelColor=000000&logoColor=white"
+                        alt="German B1" style="margin-left: 25px;"></p>
+            </div>
+
+
+
+            <!-- End About Section -->
+        </div>
+        <!-- Projects -->
+        <div class="content w3-justify text-grey padding-32" id="Projects">
+            <h2><strong>Projects</strong></h2>
+            <hr class="opacity">
+
+            <h5 id="project1"><strong>Presentation Helper</strong></h5>
+            <p>
+                <em>A Python program under developement, that allowes usage of the cursor and keyboard without any other
+                    peripheral devices other than a webcam.
+                </em>
+                <br>
+                <a href="https://github.com/jkrzel/Presentation_helper" target="_blank"
+                    class="w3-button w3-black padding-large github-hover"
+                    style="margin-top: 10px; margin-bottom: 10px; border-radius: 12px;">
+                    <i class="fa fa-github" style="margin-right: 8px; "></i> View on GitHub
+                </a>
+
+            </p>
+            <h5 id="project2"><strong>Coffe Crime</strong></h5>
+            <p>
+                <em>A narrative mystery game set in a café. Brew coffee, talk to customers, and uncover the truth behind
+                    a barista’s disappearance. In development.
+                </em>
+                <br>
+                <a href="https://github.com/Avuii/CoffeCrime" target="_blank"
+                    class="w3-button w3-black padding-large github-hover"
+                    style=" margin-top: 10px; margin-bottom: 10px; border-radius: 12px;">
+                    <i class="fa fa-github" style="margin-right: 8px; "></i> View on GitHub
+                </a>
+
+            </p>
+            <h5 id="project3"><strong> GRIB parser</strong></h5>
+            <p>
+                <em>A C++ decoder for GRIB Edition 1 messages based on the WMO FM 92 GRIB specification, using template
+                    388. This decoder parses and extracts meteorological and oceanographic data from GRIB1 binary files,
+                    which are widely used in numerical weather prediction and climate modeling
+                </em>
+                <br>
+                <a href="https://github.com/Avuii/GRIB1-388-Decoder" target="_blank"
+                    class="w3-button w3-black padding-large github-hover"
+                    style=" margin-top: 10px; margin-bottom: 10px; border-radius: 12px;">
+                    <i class="fa fa-github" style="margin-right: 8px; "></i> View on GitHub
+                </a>
+            </p>
+            <h5 id="project4"><strong> PlanAndWindSimulator</strong></h5>
+            <p>
+                <em>Flight simulator with wind influence. Generates wind vector field, calculates flight times between
+                    waypoints with and without wind, and saves data to text and CSV files.
+                </em>
+                <br>
+                <a href="https://github.com/Avuii/PlaneAndWindSimulator" target="_blank"
+                    class="w3-button w3-black padding-large github-hover"
+                    style="margin-top: 10px; margin-bottom: 10px;   border-radius: 12px;">
+                    <i class="fa fa-github" style="margin-right: 8px;"></i> View on GitHub
+                </a>
+
+            </p>
+            <h5 id="project5"><strong> Huffman text compression</strong></h5>
+            <p>
+                <em>A C++ project implementing lossless data compression and decompression using the Huffman coding
+                    algorithm. This command-line tool reads user input from the terminal to determine the operation mode
+                    and file names, then processes the data accordingly.
+                </em>
+                <br>
+                <a href="https://github.com/Avuii/Huffman-text-compression" target="_blank"
+                    class="w3-button w3-black padding-large github-hover"
+                    style="margin-top: 10px; margin-bottom: 10px;   border-radius: 12px;">
+                    <i class="fa fa-github" style="margin-right: 8px;"></i> View on GitHub
+                </a>
+
+            </p>
+            <h5 id="project6"><strong> LZ77 compression</strong></h5>
+            <p>
+                <em> A simple C++ implementation of the LZ77 compression algorithm supporting string compression and
+                    decompression with customizable sliding window size.
+                </em>
+                <br>
+
+                <a href="https://github.com/Avuii/LZ77" target="_blank"
+                    class="w3-button w3-black padding-large github-hover"
+                    style="margin-top: 10px; margin-bottom: 10px; border-radius: 12px;">
+                    <i class="fa fa-github" style="margin-right: 8px;"></i> View on GitHub
+                </a>
+
+            </p>
+            <p style="text-align: center; margin-top: 50px;"><em>More projects coming soon!</em></p>
+
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-24 w3-center"
+        style="margin:24px;margin-bottom: 0; padding: 0 ;margin-left:40%;width: 60%; background-color:black; color:white;">
+        <!-- LinkedIn Link -->
+        <a href="https://www.linkedin.com/in/katarzyna-stanczykk/" target="_blank"
+            style="margin-right: 10px; text-decoration: none;" ;>
+            <i class="fa fa-linkedin hover-opacity"></i>
+        </a>
+        <!-- GitHub Link -->
+        <a href="https://github.com/Avuii" target="_blank" style="margin-right: 10px; text-decoration: none;">
+            <i class="fa fa-github hover-opacity"></i>
+        </a>
+        <p class="medium">&copy; 2025 Katarzyna Stańczyk | Built with love ♡</p>
+        <!-- End footer -->
+    </footer>
+
+
+    <!-- END PAGE CONTENT -->
+
+
+    <script>
+        // Open and close sidebar
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "60%";
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+    <script src="/scripts/script.js"></script>
+
+</body>
+
+</html>

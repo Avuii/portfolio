@@ -1,0 +1,543 @@
+/* === RESET & BASE === */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #e9f7f6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*=== holographic button ===*/
+.holographic-button {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  color: rgb(245, 133, 255);
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(235, 10, 255, 0.727);
+}
+
+.holographic-button i {
+  margin-right: 8px;
+}
+
+.holographic-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent 30%,
+    rgba(205, 102, 214, 0.923)
+  );
+  transform: rotate(-45deg);
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 0;
+}
+
+.holographic-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(166, 80, 173, 0.923);
+}
+
+.holographic-button:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
+
+/* === TYPEWRITER EFFECT === */
+.typewriter h1 {
+  overflow: hidden;
+  border-right: .15em solid  rgba(205, 102, 214, 0.923);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .1em;
+  animation: 
+    typing 3s steps(30, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Cursor blink */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color:  rgba(205, 102, 214, 0.923); }
+}
+.dropdown {
+  width: 100%;
+  text-align: center;
+}
+
+.dropdown-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: center;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 16px 0;
+  color: #ccc;
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-content a {
+  color: #ccc;
+  padding: 10px 0;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === TOPBAR === */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00a8b5;
+    padding: 10px 20px;
+    color: white;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-left .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.topbar-left h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #f7b1b1;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .topbar {
+        flex-direction: column;
+    }
+
+    .topbar-left {
+        margin-bottom: 10px;
+    }
+}
+
+/* === HERO === */
+.hero {
+    background-color: #00a8b5;
+    color: white;
+    padding: 220px 20px 300px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.button {
+    background-color: #f1f1f1;
+    border: none;
+    color: black;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ddd;
+}
+
+/* === SECTIONS === */
+.section {
+    padding: 40px 20px;
+}
+
+.about,
+.interests {
+    background-color: #f8d6d1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about h2,
+.interests h2,
+.skills h3,
+.contact h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.about p,
+.interests p {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.skills {
+    padding: 40px 20px;
+}
+
+.skills p {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* === LANGUAGE LABELS === */
+.languages {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.languages p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* === CONTACT === */
+.contact {
+    padding: 40px 20px;
+}
+
+.input {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.padding-large {
+    padding: 12px 24px;
+}
+
+.text-grey {
+    color: #555;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.light-grey {
+    background-color: #f1f1f1;
+}
+
+.opacity {
+    opacity: 0.6;
+}
+
+.center {
+    text-align: center;
+}
+
+.xlarge {
+    font-size: 1.5rem;
+}
+
+.medium {
+    font-size: 1rem;
+}
+
+/* === FOOTER === */
+.footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: auto;
+}
+
+.footer i {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.footer i:hover {
+    opacity: 0.7;
+}
+
+.github-button {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.github-button i {
+  margin-right: 8px;
+
+}
+
+.github-button:hover {
+  background-color: #000000;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.github-hover {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.github-hover:hover {
+  background-color: #0000008e !important;
+  transform: scale(1.05);
+}
+.animated-bg {
+  position: relative;
+  width: 100%;
+   overflow: visible;
+    height: 100vh;
+    min-width: 100%;
+  min-height: 100%;
+border: none !important;}
+
+.animated-bg .layer {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 120%;
+  height: 100%;
+   overflow: visible;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  border: none !important;
+}
+
+.animated-bg .layer img {
+  width: 100%;
+  height: 100%;
+   overflow: visible;
+  object-fit: cover;
+  border: none !important;
+}
+
+/* Warstwy paralaksy */
+
+
+.midground1 {
+  z-index: 2;
+    width: 120%;
+  height: 100%;
+  animation-name: move-midground1;
+}
+@keyframes move-midground1 {
+  0% { transform: translateX(0); }
+  100% { transform: translatey(160px); }
+}
+
+.foreground1 {
+  z-index: 3;
+    width: 100%;
+ overflow: visible;
+  height: 100%;
+  animation-name: move-foreground1;
+}
+@keyframes move-foreground1 {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2) translatex(-20px); filter: blur(2px); }
+}
+.midground2 {
+  z-index: 2;
+   overflow: visible;
+    width: 120%;
+  height: 100%;
+  animation-name: move-midground2;
+}
+@keyframes move-midground2 {
+  0% { transform: translateX(0); }
+  100% { transform: translatey(160px); }
+}
+.midground3 {
+  z-index: 1;
+width: 120%;
+  height: 100%;
+  animation-name: move-midground3;
+}
+@keyframes move-midground3 {
+  0% { transform: translateX(20); }
+  100% { transform:  translatey(80px); }
+}
+.foreground2 {
+  z-index: 3;
+    width: 120%;
+  height: 100%;
+   background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  animation-name: move-foreground2;
+}
+@keyframes move-foreground2 {
+  0% { transform: scale(0.3); }
+  100% { transform: scale(0.8) translatey(-40px); filter: blur(2px); }
+}
+.dust1 {
+  z-index: 4;
+  position: absolute;
+border: none !important;
+  animation: move-dust1 25s infinite linear;
+}
+
+.dust2 {
+  z-index: 3;
+  position: absolute;
+  border: none !important;
+  animation: move-dust2 35s infinite linear;
+}
+
+@keyframes move-dust1 {
+  0% {
+    transform: scale(1) rotate(0deg) translateZ(0);
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(2) rotate(15deg) translateZ(20px);
+    filter: blur(1px);
+  }
+}
+
+@keyframes move-dust2 {
+  0% {
+    transform: scale(1.5) rotate(0deg) translateZ(0);
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(1.2) rotate(-10deg) translateZ(-20px);
+    filter: blur(2px);
+  }
+}
+.dust3 {
+  z-index: 4;
+  position: absolute;
+  border: none !important;
+  bottom: 0;
+  animation: move-dust3 25s infinite linear;
+}
+
+@keyframes move-dust3 {
+  0% {
+    transform: scale(1) rotate(0deg) translateY(0);
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(2) rotate(15deg) translateY(-160px) translateZ(20px);
+    filter: blur(1px);
+  }
+}
