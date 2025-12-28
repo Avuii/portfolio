@@ -763,3 +763,33 @@ border: none !important;
 .lang-row{ display:flex; gap:0; }
 .lang-name{ flex: 1; }       /* wypełnia lewą część */
 .lang-level{ width: 120px; text-align:center; }
+/* Mini tech badges under project description */
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
+  margin: 10px 0 6px;
+}
+
+.project-tag{
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  padding: 6px 10px;
+  border-radius: 999px; /* mocno zaokrąglone */
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,.16);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+/* colors (pasują do Twojej palety) */
+.tag-teal{ background:#1AA6A8; }
+.tag-blue{ background:#2D9CDB; }
+.tag-purple{ background:#9B5DE5; }
+.tag-pink{ background:#FF4D6D; }
+.tag-gold{ background:#FFB703; color:#1b1b1b; border-color: rgba(0,0,0,.08); }
+.tag-red{ background:#E63946; }
+.tag-green{ background:#2BB673; }
+.tag-indigo{ background:#6C63FF; }
+.tag-violet{ background:#7C3AED; }
