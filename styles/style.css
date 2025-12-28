@@ -732,3 +732,34 @@ border: none !important;
 .level-c1{ background:#FFB703 !important; }
 .level-b1{ background:#9B5DE5 !important; }
 
+/* Center whole Languages block */
+.lang-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin: 12px auto 0;      /* auto = centrowanie */
+  width: fit-content;        /* dopasuj do zawartości */
+}
+
+/* each row centered */
+.lang-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:0;                     /* sklejone */
+}
+
+/* keep your pill sizing consistent */
+.lang-name{ min-width: 160px; }
+.lang-level{ min-width: 110px; text-align:center; }
+
+.lang-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin: 12px auto 0;
+  width: 320px;              /* stała szerokość jak na screenie */
+}
+.lang-row{ display:flex; gap:0; }
+.lang-name{ flex: 1; }       /* wypełnia lewą część */
+.lang-level{ width: 120px; text-align:center; }
