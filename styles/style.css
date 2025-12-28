@@ -610,5 +610,62 @@ border: none !important;
 .lang-row { gap:0; }
 .lang-name { border-top-right-radius: 0; border-bottom-right-radius: 0; }
 .lang-level { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+.lang-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:10px;
+}
 
+.lang-row{
+  display:flex;
+  align-items:center;
+  gap:0; /* jedna "piguła" */
+}
+
+.lang-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 14px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+
+/* biały język + czarny tekst */
+.lang-name{
+  background:#ffffff;
+  color:#0b0b12;
+  min-width: 120px;
+  justify-content:flex-start;
+
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* kolorowy poziom + biały tekst */
+.lang-level{
+  color:#ffffff;
+  min-width: 90px;
+
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* kolory poziomów */
+.level-native{ background:#1AA6A8; } /* teal */
+.level-c1{ background:#FFB703; }     /* gold */
+.level-b1{ background:#9B5DE5; }     /* purple */
+
+.badges img{
+  height: 34px;
+  border-radius: 12px !important;
+  overflow: hidden;
+  display: block;              /* ważne */
+  box-shadow: 0 8px 18px rgba(0,0,0,.22);
+}
 
