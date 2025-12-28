@@ -669,3 +669,66 @@ border: none !important;
   box-shadow: 0 8px 18px rgba(0,0,0,.22);
 }
 
+
+
+
+/* =========================
+   FINAL OVERRIDES (keep last)
+   ========================= */
+
+/* Rounded corners for Shields.io SVG badges (works reliably with clip-path) */
+.badges img{
+  height: 34px !important;
+  display: inline-block !important;
+  border-radius: 12px !important;
+  -webkit-clip-path: inset(0 round 12px) !important;
+  clip-path: inset(0 round 12px) !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,.22) !important;
+}
+
+/* Languages: one pill (white language + colored level) */
+.lang-list{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:12px !important;
+  margin-top:10px !important;
+}
+.lang-row{
+  display:flex !important;
+  align-items:center !important;
+  gap:0 !important;
+}
+.lang-chip{
+  display:inline-flex !important;
+  align-items:center !important;
+  padding: 10px 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: .6px !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,.18) !important;
+}
+.lang-name{
+  background:#ffffff !important;
+  color:#0b0b12 !important;
+  min-width: 130px !important;
+  justify-content:flex-start !important;
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.lang-level{
+  color:#ffffff !important;
+  min-width: 95px !important;
+  justify-content:center !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.level-native{ background:#1AA6A8 !important; }
+.level-c1{ background:#FFB703 !important; }
+.level-b1{ background:#9B5DE5 !important; }
+
