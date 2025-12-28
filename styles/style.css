@@ -542,3 +542,73 @@ border: none !important;
     filter: blur(1px);
   }
 }
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+  margin: 10px 0 22px;
+}
+
+.badges img{
+  height: 34px;              /* równa wysokość */
+  border-radius: 12px;       /* lekko zaokrąglone rogi */
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0,0,0,.22);
+}
+
+.badges img{
+  filter: drop-shadow(0 0 10px rgba(180,120,220,.25));
+}
+.lang-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;                 /* odstępy między wierszami */
+  margin-top: 10px;
+}
+
+.lang-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.lang-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 14px;
+  border-radius: 12px;      /* lekko zaokrąglone */
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+
+/* język: biały + czarny */
+.lang-name{
+  background: #ffffff;
+  color: #0b0b12;
+  min-width: 110px;         /* żeby wszystkie równo wyglądały */
+  justify-content: flex-start;
+}
+
+/* poziom: kolor + biały tekst */
+.lang-level{
+  color: #ffffff;
+  min-width: 90px;
+}
+
+/* kolory poziomów – dopasowane do Twojego kosmicznego tła */
+.level-native{ background: #1AA6A8; }  /* teal */
+.level-c1{ background: #FFB703; }      /* gold */
+.level-b1{ background: #9B5DE5; }      /* purple */
+.lang-row { gap:0; }
+.lang-name { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.lang-level { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+
+
