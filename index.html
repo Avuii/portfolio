@@ -659,12 +659,9 @@
 
         <p style="text-align: center; margin-top: 50px;"><em>More projects coming soon!</em></p>
 
-    </div>
+  </div> <!-- end Projects section -->
 
-</div>
-</div>
-</body>
-  <!-- Footer (inside main column) -->
+  <!-- Footer -->
   <footer class="site-footer w3-center">
     <div class="footer-icons">
       <a href="https://www.linkedin.com/in/katarzyna-stanczykk/" target="_blank" rel="noopener noreferrer"
@@ -691,22 +688,26 @@
     <p class="medium">&copy; <span id="year"></span> Katarzyna Stańczyk | Built with love ♡</p>
   </footer>
 
+</div> <!-- end .w3-main -->
 
-        <script>
-            function openNav() {
-                document.getElementById("mySidebar").style.width = "60%";
-                document.getElementById("mySidebar").style.display = "block";
-            }
+<script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "60%";
+    document.getElementById("mySidebar").style.display = "block";
+  }
 
-            function closeNav() {
-                document.getElementById("mySidebar").style.display = "none";
-            }
+  function closeNav() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
 
-            document.getElementById("year").textContent = new Date().getFullYear();
-        </script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  });
+</script>
 
-        <script src="/portfolio/scripts/script.js"></script>
+<script src="/portfolio/scripts/script.js"></script>
 
-
-
+</body>
 </html>
+
